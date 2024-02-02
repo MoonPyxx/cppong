@@ -15,7 +15,10 @@ int main(){
     SetTargetFPS(60);
     while (!WindowShouldClose()){
         BeginDrawing();
-
+        DrawCircle(screen_width/2, screen_height/2, 25, WHITE);
+        DrawRectangle(10,screen_height/2 -60,25,120, RED);
+        DrawRectangle(screen_width-35,screen_height/2 -60,25,120, BLUE);
+        DrawLine(screen_width/2,0, screen_width/2, screen_height, GREEN);
         EndDrawing();
     }
 
