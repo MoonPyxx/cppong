@@ -1,7 +1,7 @@
 CC = g++
 CFLAGS = -g -Wall
 LFLAGS = -lraylib
-SRC = main.cpp ball.cpp
+SRC = main.cpp ball.cpp Paddle.cpp CpuPaddle.cpp
 EXEC = pong
 
 .PHONY: all clean

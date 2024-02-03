@@ -14,6 +14,7 @@ public:
     Ball(float x, float y, int speed_x, int speed_y, int radius);
     void Draw();
     void Update();
+    float getY();
 };
 
 
