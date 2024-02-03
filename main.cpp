@@ -6,9 +6,9 @@
 using namespace std;
 
 
+
+
 int main(){
-
-
     const int screen_width = 1280;
     const int screen_height = 800;
     int player_width = 25,
@@ -26,6 +26,7 @@ int main(){
     Ball ball(screen_width /2, screen_height/2, 7, 7,20);
     Paddle player(player_x, player_y, player_width, player_height, player_speed);
     CpuPaddle CPU(cpu_x, cpu_y, cpu_width, cpu_height, cpu_speed);
+
     cout << "Starting CPPong..." << endl;
     InitWindow(screen_width, screen_height, "CPPong");
     SetTargetFPS(60);
@@ -34,13 +35,22 @@ int main(){
         ball.Update();
         player.Update();
         CPU.Update(ball.getY());
+    int ball_speed_x = ball.getSpeedX();
+        if (CheckCollisionCircleRec(Vector2{ball.getX(), ball.getY()}, ball.getRadius(), Rectangle{player.getX(), player.getY(), player.getWidth(), player.getHeight()})){
+            ball.setSpeedX(ball_speed_x *= -1);
+        }
+        if (CheckCollisionCircleRec(Vector2{ball.getX(), ball.getY()}, ball.getRadius(), Rectangle{CPU.getX(), CPU.getY(), CPU.getWidth(), CPU.getHeight()})){
+            ball.setSpeedX(ball_speed_x *= -1);
+        }
         ClearBackground(BLACK);
         ball.Draw();
         player.Draw();
-
-
-        DrawRectangle(10,screen_height/2 -60,25,120, RED);
+        CPU.Draw();
         DrawLine(screen_width/2,0, screen_width/2, screen_height, GREEN);
+        DrawText(TextFormat("%i",ball.cpu_score), screen_width/4,20,20,GREEN);
+        DrawText(TextFormat("%i",ball.player_score), 3*screen_width/4,20,20,GREEN);
+
+
         EndDrawing();
     }
 

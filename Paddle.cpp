@@ -24,3 +24,15 @@ void Paddle::Update(){
         y = GetScreenHeight() - height;
     }
 }
+float Paddle::getY(){
+    return y;
+}
+float Paddle::getX(){
+    return x;
+}
+float Paddle::getHeight(){
+    return height;
+}
+float Paddle::getWidth() {
+    return width;
+}

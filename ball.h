@@ -11,10 +11,17 @@ class Ball {
     int speed_x, speed_y;
     int radius;
 public:
+    int player_score = 0;
+    int cpu_score = 0;
     Ball(float x, float y, int speed_x, int speed_y, int radius);
     void Draw();
     void Update();
     float getY();
+    float getX();
+    int getRadius();
+    void setSpeedX(int speed_x);
+    int getSpeedX();
+    void resetBall();
 };
 
 

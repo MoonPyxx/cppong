@@ -14,6 +14,10 @@ public:
     Paddle(float x, float y, float width, float height, int speed);
     void Draw();
     void Update();
+    float getX();
+    float getY();
+    float getHeight();
+    float getWidth();
 };
 
 
