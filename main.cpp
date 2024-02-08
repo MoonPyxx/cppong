@@ -5,10 +5,9 @@
 #include "CpuPaddle.h"
 using namespace std;
 
-
-
-
 int main(){
+    Color delftBlue = Color{65, 64, 115,255};
+    Color cambridgeBlue= Color{112, 163, 127, 255};
     const int screen_width = 1280;
     const int screen_height = 800;
     int player_width = 25,
@@ -42,13 +41,13 @@ int main(){
         if (CheckCollisionCircleRec(Vector2{ball.getX(), ball.getY()}, ball.getRadius(), Rectangle{CPU.getX(), CPU.getY(), CPU.getWidth(), CPU.getHeight()})){
             ball.setSpeedX(ball_speed_x *= -1);
         }
-        ClearBackground(BLACK);
+        ClearBackground(delftBlue);
         ball.Draw();
         player.Draw();
         CPU.Draw();
-        DrawLine(screen_width/2,0, screen_width/2, screen_height, GREEN);
-        DrawText(TextFormat("%i",ball.cpu_score), screen_width/4,20,20,GREEN);
-        DrawText(TextFormat("%i",ball.player_score), 3*screen_width/4,20,20,GREEN);
+        DrawLine(screen_width/2,0, screen_width/2, screen_height, WHITE);
+        DrawText(TextFormat("%i",ball.cpu_score), screen_width/4,20,40,cambridgeBlue);
+        DrawText(TextFormat("%i",ball.player_score), 3*screen_width/4,20,40,cambridgeBlue);
 
 
         EndDrawing();

@@ -12,7 +12,7 @@
     this -> radius = radius;
     }
     void Ball::Draw(){
-        DrawCircle(x, y, radius, WHITE);
+        DrawCircle(x, y, radius, Green);
     }
     void Ball::Update() {
         x += speed_x;

@@ -9,9 +9,10 @@ Paddle::Paddle(float x, float y, float width, float height, int speed) {
     this->width = width;
     this->height = height;
     this->speed = speed;
+    this -> color = BLUE;
 }
  void Paddle::Draw(){
-     DrawRectangle(x,y, width, height, BLUE);
+     DrawRectangle(x,y, width, height, color);
 }
 void Paddle::Update(){
     if (IsKeyDown(KEY_UP)){

@@ -10,6 +10,7 @@ class Paddle {
     friend class CpuPaddle;
     float x,y, width, height;
     int speed;
+    Color color = BLUE;
 public:
     Paddle(float x, float y, float width, float height, int speed);
     void Draw();

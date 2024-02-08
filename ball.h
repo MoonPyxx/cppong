@@ -10,6 +10,7 @@ class Ball {
     float x,y;
     int speed_x, speed_y;
     int radius;
+    Color Green = Color{121, 180, 115,255};
 public:
     int player_score = 0;
     int cpu_score = 0;

@@ -15,3 +15,6 @@ void CpuPaddle::Update(float ball_y){
         y = y + speed;
     }
 }
+void CpuPaddle::Draw(){
+     DrawRectangle(x,y, width, height, color);
+}
